@@ -7,9 +7,9 @@ let app = Vue.createApp({
             showBooks: 'true',
             books: 
                 [
-                    {title: 'name of the wind', author: 'patrick focus', img: 'assets/project-1.png'},
-                    {title: 'rasta man', author: 'samuel druig', img: 'assets/project-2.png'},
-                    {title: 'coded prowress', author: 'mel johnson', img: 'assets/project-3.png'},
+                    {title: 'name of the wind', author: 'patrick focus', img: 'assets/project-1.png', isFav: true},
+                    {title: 'rasta man', author: 'samuel druig', img: 'assets/project-2.png', isFav: false},
+                    {title: 'coded prowress', author: 'mel johnson', img: 'assets/project-3.png', isFav: true},
                 ],
             x: 0,
             y: 0

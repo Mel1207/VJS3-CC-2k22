@@ -6,14 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VJS3 - CC</title>
     <style>
-        .box {
+        /* .box {
             padding: 100px 0;
             width: 400px;
             text-align: center;
             background: #ddd;
             margin: 20px;
             display: inline-block;
+        } */
+
+        body {
+            background: #eee;
+            width: 80%;
+            max-width: 960px;
+            margin: 20px auto;
         }
+        p, h3, ul {
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            list-style-type: none;
+            background: #fff;
+            margin: 20px auto;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        li.fav {
+            background: #88c9ff;
+            color: #fff;
+        }
+
         ul li img {
             height: 100px;
             width: 100px;
@@ -31,7 +57,7 @@
         <div v-if="showBooks">
             <!-- <p>{{ title }} - {{ author }} - {{ age }}</p> -->
             <ul>
-                <li v-for="item in books">
+                <li v-for="item in books" :class="{ fav: item.isFav}">
                     <img :src="item.img" :alt="item.title">
                     <h3>{{item.title}}</h3>
                     <p>{{item.author}}</p>
