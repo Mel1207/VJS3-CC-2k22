@@ -35,7 +35,11 @@ let app = Vue.createApp({
             item.isFav = !item.isFav
             // console.log('toggle is click')
         }
-
+    },
+    computed: {
+        filteredBooks() {
+            return this.books.filter((item) => item.isFav )
+        }
     }
 })
 
