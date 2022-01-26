@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VJS3 - CC</title>
+    <style>
+        .box {
+            padding: 100px 0;
+            width: 400px;
+            text-align: center;
+            background: #ddd;
+            margin: 20px;
+            display: inline-block;
+        }
+        ul li img {
+            height: 100px;
+            width: 100px;
+            object-fit: cover;
+        }
+    </style>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+</head>
+<body>
+    <h1>Hey vue</h1>
+    <div id="app">
+        <!-- Attribute binding -->
+        <a :href="url" target="_blank">search engine</a>
+
+        <div v-if="showBooks">
+            <!-- <p>{{ title }} - {{ author }} - {{ age }}</p> -->
+            <ul>
+                <li v-for="item in books">
+                    <img :src="item.img" :alt="item.title">
+                    <h3>{{item.title}}</h3>
+                    <p>{{item.author}}</p>
+                </li>
+            </ul>
+        </div>
+
+        <button @click="toggleShowBooks">
+            <span v-if="showBooks">Hide Books</span>
+            <span v-else>Show Books</span>
+            <!-- <span v-if="!showBooks">Show Books</span> -->
+        </button>
+        <!-- <button @click="age++">Increase Age</button>
+        <button @click="age--">decrease Age</button> -->
+        <!-- <div class="" @click="title = 'something else'">change title</div> -->
+        <!-- <div class="" @click="changeTitle('oathbringer')">change title</div> -->
+
+        <div v-show="showBooks">currently showing books</div>
+
+        <!-- Mouse events -->
+        <div class="box" @mouseover="handleEvent($event, 5)">Mouseover (enter)</div>
+        <div class="box" @mouseleave="handleEvent">Mouseleave</div>
+        <div class="box" @dblclick="handleEvent">Double click</div>
+        <div class="box" @mousemove="handleMouseMove">position - {{ x }} {{ y }}</div>
+        <div class="box"></div>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
