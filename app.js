@@ -38,7 +38,7 @@ let app = Vue.createApp({
     },
     computed: {
         filteredBooks() {
-            return this.books.filter((item) => item.isFav )
+            return this.books.filter((item) => item.isFav)
         }
     }
 })
